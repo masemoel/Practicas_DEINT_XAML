@@ -1,0 +1,53 @@
+﻿<Window x:Class="Practica2._2.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practica2._2"
+        mc:Ignorable="d"
+        Title="Bienvenido al hotel" Height="475" Width="820" WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <ContextMenu x:Key="cmButton">
+            <MenuItem Click="cambiarColor" Header="Cambiar color del texto a azul" />
+            <Separator />
+            <MenuItem Click="borrarReserva" Header="Borrar reserva" />
+        </ContextMenu>
+    </Window.Resources>
+    <StackPanel x:Name="fondoprincipal">
+        <Menu Background="White" x:Name="menuae" DockPanel.Dock="Top">
+            <MenuItem Header="Archivo">
+                <MenuItem x:Name="creareserva" Click="crearFormulario" Header="_Nueva reserva" />
+                <MenuItem IsEnabled="False" x:Name="abrirreservaitem" Click="abrirUltimaReserva" Header="_Abrir la última reserva" />
+                <Separator />
+                <MenuItem x:Name="salirr" Click="salir" Header="_Salir" />
+            </MenuItem>
+            <MenuItem Header="_Editar">
+                <CheckBox Checked="modoOscuro" Unchecked="modoOscuro" x:Name="oscurocheck">Modo oscuro</CheckBox>
+            </MenuItem>
+        </Menu>
+        <Border Margin="15" BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4,4,4,4">
+            <StackPanel>
+                <Button Background="LightGray" Margin="15, 20" x:Name="crearbutton" Content="_Crear nueva reserva" Click="crearFormulario"></Button>
+                <Button IsEnabled="false" Background="LightGray" Margin="15, 0" x:Name="abrirRbutton" Content="_Abrir la última reserva creada" Click="abrirUltimaReserva"></Button>
+                <Button Background="LightGray" Margin="15, 20" x:Name="salirbutton" Content="_Salir" Click="salir"></Button>
+            </StackPanel>
+        </Border>
+        <Border Margin="15, 0" BorderBrush="DarkGray" BorderThickness="1" CornerRadius="4,4,4,4">
+            <StackPanel>
+                <!-- TextBlock MouseRightButtonUp="reservasClick" TextWrapping="Wrap" Margin="4" x:Name="reservastext"></TextBlock>
+                <TODO: dejar sólo DataGrid en lugar del TextBlock -->
+                <DataGrid MouseRightButtonUp="reservasClick" Margin="4" x:Name="reservasgrid" AutoGenerateColumns="False">
+                    <DataGrid.Columns >
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}" />
+                        <DataGridTextColumn Header="Apellidos" Binding="{Binding apellidos}" />
+                        <DataGridTextColumn Header="Dirección" Binding="{Binding direccion}" />
+                        <DataGridTextColumn Header="Fecha nacimiento" Binding="{Binding fecha_nac}" />
+                        <DataGridTextColumn Header="Sexo" Binding="{Binding sexo}" />
+                        <DataGridTextColumn Header="Nº acompañantes" Binding="{Binding num_acomp}" />
+                        <DataGridTextColumn Header="Periodo de reserva" Binding="{Binding periodo_reserva}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</Window>

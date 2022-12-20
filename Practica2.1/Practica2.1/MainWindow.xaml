@@ -1,0 +1,61 @@
+﻿<Window x:Class="Practica2._1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practica2._1"
+        mc:Ignorable="d"
+        Title="Práctica 2.1" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="200" />
+            <ColumnDefinition Width="10px" />
+            <ColumnDefinition Width="*" MinWidth="245" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <TextBlock Foreground="YellowGreen" FontWeight="Bold" FontSize="24px" TextAlignment="Center">Datos personales</TextBlock>
+            <Label FontWeight="Bold">Nombre:</Label>
+            <TextBox />
+            <Label FontWeight="Bold">Apellidos:</Label>
+            <TextBox TextChanged="TextBox_TextChanged" />
+            <Label FontWeight="Bold">Dirección:</Label>
+            <TextBox />
+            <Label FontWeight="Bold">Fecha de nacimiento:</Label>
+            <TextBox />
+            <Label FontWeight="Bold">Sexo</Label>
+            <RadioButton>Hombre</RadioButton>
+            <RadioButton>Mujer</RadioButton>
+            <Label FontWeight="Bold">Formación:</Label>
+            <DockPanel>
+                <RadioButton DockPanel.Dock="Bottom" Height="auto">Otras titulaciones</RadioButton>
+                <RadioButton DockPanel.Dock="Bottom" Height="auto">Máster</RadioButton>
+                <RadioButton DockPanel.Dock="Bottom" Height="auto">Título universitario</RadioButton>
+                <RadioButton DockPanel.Dock="Bottom" Height="auto">Ciclo superior</RadioButton>
+                <RadioButton DockPanel.Dock="Bottom" Height="auto">Ciclo medio</RadioButton>
+                <RadioButton DockPanel.Dock="Bottom" Height="auto">Bachillerato</RadioButton>
+                <RadioButton DockPanel.Dock="Bottom" Height="auto">ESO</RadioButton>
+                <!--Button>Center</Button-->
+            </DockPanel>
+        </StackPanel>
+        <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
+        <StackPanel Grid.Column="2">
+            <TextBlock FontWeight="Bold" Foreground="YellowGreen" FontSize="24px" TextAlignment="Center">Datos laborales</TextBlock>
+            <Label FontWeight="Bold">Correo electrónico:</Label>
+            <TextBox Text="@g.educaand.es"/>
+            <Label FontWeight="Bold">Contraseña:</Label>
+            <PasswordBox />
+            <Label FontWeight="Bold">Lenguajes de programación que conoces:</Label>
+            <CheckBox IsChecked="True">Java</CheckBox>
+            <CheckBox>HTML 5</CheckBox>
+            <CheckBox>Python</CheckBox>
+            <Image Source="https://www.juntadeandalucia.es/averroes/centros-tic/23002449/helvia/sitio/upload/img/escudo2.gif" Height="167" Width="267" />
+            <!--Label Hyperlink.RequestNavigate="" TextAlignment="Center">https://blogsaverroes.juntadeandalucia.es/ieslasfuentezuelas/</Label-->
+            <TextBlock TextAlignment="Center">           
+                <Hyperlink NavigateUri="https://blogsaverroes.juntadeandalucia.es/ieslasfuentezuelas/" RequestNavigate="Hyperlink_RequestNavigate">
+                    IES Las fuentezuelas
+                </Hyperlink>
+            </TextBlock>
+            <Button Background="AntiqueWhite" Foreground="Blue" FontWeight="Bold">Registrarse</Button>
+        </StackPanel>
+    </Grid>
+</Window>
